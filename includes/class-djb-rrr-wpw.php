@@ -87,12 +87,12 @@ class DJB_RRR_WPW {
 	 */
 	private function define_route_hooks() {
 
-		add_action('djb-rrr-save-route', array( $this, 'save'), 10, 2);
+        //TODO: we should only do this if we've fired up the RCubed plugin
+        add_action('djb-rrr-save-route', array( $this, 'save'), 10, 2);
 
 		add_filter('djb-rrr-route-type-data', array($this, 'add_wpw_route_type_data'), 10, 3);
         add_filter('djb-rrr-render-route-summary', array( $this, 'render_route_summary'), 10, 2);
         add_filter('djb-rrr-render-route-details', array( $this, 'render_route_details'), 10, 2);
-
 	}
 
 	/**
